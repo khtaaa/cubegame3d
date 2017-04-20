@@ -67,7 +67,28 @@ public class gravity : MonoBehaviour {
 	//オブジェクトが衝突したとき
 	void OnCollisionEnter(Collision col) {
 		rb.useGravity = false;
-		if (col.transform.gameObject.CompareTag ("1")) {
+
+        if (col.gameObject.CompareTag("Floor"))
+        {
+            Vector3 normal = col.gameObject.GetComponent<NormalVector>().normal;
+
+            // 外積 2つのベクトルが成す平面の法線方向を求める
+            // 法線 面に垂直な線
+            Vector3 viewVec = Vector3.Cross(transform.right, normal);
+
+            transform.rotation = Quaternion.LookRotation(viewVec, normal);
+
+            /*
+            // ぶつかった先のフロアの法線のマイナス方向と、現在の正面方向の成す角度を求める
+            float theta = Vector3.Angle(viewVec, transform.forward);
+            Debug.Log(theta);
+
+            Quaternion rot =  Quaternion.LookRotation(viewVec, normal);
+            transform.rotation = Quaternion.AngleAxis(theta, rot * Vector3.up);
+            */
+        }
+        
+        if (col.transform.gameObject.CompareTag ("1")) {
 			mae = 1;
 			transform.rotation = Quaternion.Euler ((float)Space.World, y, (float)Space.World);
 			kabe [1] = true;
