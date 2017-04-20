@@ -64,9 +64,10 @@ public class gravity : MonoBehaviour {
 		rb.AddForce (localGravity, ForceMode.Acceleration);
 	}
 
-	//オブジェクトが衝突したとき
-	void OnCollisionEnter(Collision col) {
-		rb.useGravity = false;
+    //オブジェクトが衝突したとき
+    void OnCollisionEnter(Collision col)
+    {
+        rb.useGravity = false;
 
         if (col.gameObject.CompareTag("Floor"))
         {
@@ -87,62 +88,6 @@ public class gravity : MonoBehaviour {
             transform.rotation = Quaternion.AngleAxis(theta, rot * Vector3.up);
             */
         }
+    }
         
-        if (col.transform.gameObject.CompareTag ("1")) {
-			mae = 1;
-			transform.rotation = Quaternion.Euler ((float)Space.World, y, (float)Space.World);
-			kabe [1] = true;
-		}
-		if (col.transform.gameObject.CompareTag ("2")) {
-			mae = 2;
-			transform.rotation=Quaternion.Euler(90,y,90);
-			kabe [2] = true;
-		}
-		if (col.transform.gameObject.CompareTag ("3")) {
-			mae = 3;
-			transform.rotation=Quaternion.Euler(x,0,-90);
-			kabe [3] = true;
-		}
-		if (col.transform.gameObject.CompareTag ("4")) {
-			mae = 4;
-			transform.rotation=Quaternion.Euler(x,0,90);
-			kabe [4] = true;
-		}
-		if (col.transform.gameObject.CompareTag ("5")) {
-			mae = 5;
-			transform.rotation=Quaternion.Euler(x,90,-90);
-			kabe [5] = true;
-		}
-		if (col.transform.gameObject.CompareTag ("6")) {
-			mae = 6;
-			transform.rotation=Quaternion.Euler(x,-90,-90);
-			kabe [6] = true;
-		}
-	}
-	void OnCollisionExit(Collision col) {
-		if (col.transform.gameObject.CompareTag ("1")) {
-			mae = 1;
-			kabe [1] = false;
-		}
-		if (col.transform.gameObject.CompareTag ("2")) {
-			mae = 2;
-			kabe [2] = false;
-		}
-		if (col.transform.gameObject.CompareTag ("3")) {
-			mae = 3;
-			kabe [3] = false;
-		}
-		if (col.transform.gameObject.CompareTag ("4")) {
-			mae = 4;
-			kabe [4] = false;
-		}
-		if (col.transform.gameObject.CompareTag ("5")) {
-			mae = 5;
-			kabe [5] = false;
-		}
-		if (col.transform.gameObject.CompareTag ("6")) {
-			mae = 6;
-			kabe [6] = false;
-		}
-	}
 }
