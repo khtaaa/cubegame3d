@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872692, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -287,8 +287,9 @@ GameObject:
   - component: {fileID: 1176338559}
   - component: {fileID: 1176338558}
   - component: {fileID: 1176338564}
+  - component: {fileID: 1176338565}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,6 +308,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: 0
   rote: 0
+  floor: 0
+  normal: {x: 0, y: 0, z: 0}
+  speed: 8
 --- !u!114 &1176338559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,6 +403,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1176338565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176338557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831032df3afe739429038e531270fa2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock: {fileID: 1699160407153616, guid: d422a20d6aa7a6046987b55edb5fed06, type: 2}
 --- !u!1001 &1258501563
 Prefab:
   m_ObjectHideFlags: 0

@@ -5,7 +5,9 @@ using UnityEngine;
 public class player : MonoBehaviour {
 	public float pos;
 	public float rote;
-
+	public bool floor;
+	public Vector3 normal;
+	public int speed=8;
 	// Use this for initialization
 	void Start () {
 	}
@@ -15,11 +17,34 @@ public class player : MonoBehaviour {
 		pos = Input.GetAxis ("Vertical");
 		rote = Input.GetAxis ("Horizontal");
 
-		transform.Translate (0f, 0f, pos/10);
+		transform.Translate (0f, 0f, pos/speed);
 		transform.Rotate (0f, rote, 0f);
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			transform.Translate (0f, 1f, 0f);
+		if (Input.GetKeyDown (KeyCode.Space) && floor==true) {
+			this.GetComponent<Rigidbody> ().velocity = normal*9.8f;//new Vector3 (this.GetComponent<Rigidbody> ().velocity.x, 10, 0);
+			floor = false;
+		}
+	}
+
+	void OnCollisionEnter(Collision col)
+	{
+		if (!col.gameObject.CompareTag("enemy")) {
+			if (col.gameObject.CompareTag ("Floor")) {
+				normal = col.gameObject.GetComponent<NormalVector> ().normal;
+			}
+			floor = true;
+		}
+
+		if (col.gameObject.CompareTag ("rock")) {
+			speed = 20;
+			
+		}
+	}
+
+	void OnCollisionExit(Collision col) {
+		if (col.gameObject.CompareTag ("rock")) {
+			speed = 8;
+
 		}
 	}
 

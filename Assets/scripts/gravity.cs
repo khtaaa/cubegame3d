@@ -30,7 +30,7 @@ public class gravity : MonoBehaviour {
         if (col.gameObject.CompareTag("Floor"))
         {
             Vector3 normal = col.gameObject.GetComponent<NormalVector>().normal;
-            localGravity = new Vector3(normal.x * -9.5f, normal.y * -9.5f, normal.z * -9.5f);
+            localGravity = new Vector3(normal.x * -9.8f, normal.y * -9.8f, normal.z * -9.8f);
 
             // 外積 2つのベクトルが成す平面の法線方向を求める
             // 法線 面に垂直な線
