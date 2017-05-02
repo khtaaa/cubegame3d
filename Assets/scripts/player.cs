@@ -7,9 +7,10 @@ public class player : MonoBehaviour {
 	public float rote;
 	public bool floor;
 	public Vector3 normal;
-	public int speed=8;
+	public int speed=20;
 	// Use this for initialization
 	void Start () {
+		
 	}
 	
 	// Update is called once per frame
@@ -17,7 +18,7 @@ public class player : MonoBehaviour {
 		pos = Input.GetAxis ("Vertical");
 		rote = Input.GetAxis ("Horizontal");
 
-		transform.Translate (0f, 0f, pos/speed);
+		transform.Translate (0f, 0f, pos*speed*0.01f);
 		transform.Rotate (0f, rote, 0f);
 
 		if (Input.GetKeyDown (KeyCode.Space) && floor==true) {
@@ -36,14 +37,14 @@ public class player : MonoBehaviour {
 		}
 
 		if (col.gameObject.CompareTag ("rock")) {
-			speed = 20;
+			speed = 8;
 			
 		}
 	}
 
 	void OnCollisionExit(Collision col) {
 		if (col.gameObject.CompareTag ("rock")) {
-			speed = 8;
+			speed = 20;
 
 		}
 	}

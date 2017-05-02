@@ -9,47 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1470957472521844}
+  m_RootGameObject: {fileID: 1665886694484570}
   m_IsPrefabParent: 1
---- !u!1 &1470957472521844
+--- !u!1 &1665886694484570
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4979938147231134}
-  - component: {fileID: 33826457963231198}
-  - component: {fileID: 65572748295109636}
-  - component: {fileID: 23977492409291866}
-  - component: {fileID: 114038008542117230}
-  - component: {fileID: 114733128511890386}
-  m_Layer: 8
-  m_Name: floor
-  m_TagString: Floor
+  - component: {fileID: 4359610099953644}
+  - component: {fileID: 33059647118946886}
+  - component: {fileID: 65388464478885778}
+  - component: {fileID: 23062335947414808}
+  - component: {fileID: 114198472139075952}
+  m_Layer: 0
+  m_Name: scaffold
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4979938147231134
+--- !u!4 &4359610099953644
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470957472521844}
+  m_GameObject: {fileID: 1665886694484570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -50, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalPosition: {x: 4.1352196, y: -17.724283, z: 10.163292}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23977492409291866
+--- !u!23 &23062335947414808
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470957472521844}
+  m_GameObject: {fileID: 1665886694484570}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 44a4e061d976a894089102ab8b566b52, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,47 +74,34 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33826457963231198
+--- !u!33 &33059647118946886
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470957472521844}
+  m_GameObject: {fileID: 1665886694484570}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65572748295109636
+--- !u!65 &65388464478885778
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470957472521844}
+  m_GameObject: {fileID: 1665886694484570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114038008542117230
+--- !u!114 &114198472139075952
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470957472521844}
+  m_GameObject: {fileID: 1665886694484570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f514a23ce973d3c43b168d40dcc85f83, type: 3}
+  m_Script: {fileID: 11500000, guid: 4189485adcf112c4bb8bd108a761da82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normal: {x: 0, y: 1, z: 0}
---- !u!114 &114733128511890386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470957472521844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 937e112ae76c8c14188d4e37cacf0910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 1679969986048416, guid: c42d5b3eddb105e44bd0b9b28943a6c0, type: 2}
   ok: 0
