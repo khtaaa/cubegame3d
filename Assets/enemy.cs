@@ -12,11 +12,17 @@ public class enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = this.GetComponent<Rigidbody>();
+		Vector3 viewVec = Vector3.Cross(transform.right, normal);
+
+		transform.rotation = Quaternion.LookRotation(viewVec, normal);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		localGravity = new Vector3(normal.x * -9.8f, normal.y * -9.8f, normal.z * -9.8f);
+		Vector3 viewVec = Vector3.Cross(transform.right, normal);
+
+		transform.rotation = Quaternion.LookRotation(viewVec, normal);
 	}
 
 	void FixedUpdate () {
@@ -30,7 +36,7 @@ public class enemy : MonoBehaviour {
 	void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.CompareTag ("Player")) {
-			floor.GetComponent<enemy_spown> ().ok = true;
+			floor.GetComponent<enemy_spown> ().nowenemy--;
 			Destroy (gameObject);
 
 		}
