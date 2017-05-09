@@ -50,11 +50,12 @@ public class enemy_spown : MonoBehaviour {
 			inst.z = nor.z;
 		}
 
+		Vector3 viewVec = Vector3.Cross(transform.right,nor );
 		GameObject INSenemy = Instantiate (enemy, 
 			new Vector3 (transform.position.x + inst.x * height,
 				transform.position.y + inst.y * height,
 				transform.position.z + inst.z * height), 
-			Quaternion.identity) as GameObject;
+			Quaternion.LookRotation(viewVec, nor)) as GameObject;
 		INSenemy.GetComponent<enemy> ().normal = nor;
 		INSenemy.GetComponent<enemy> ().floor = this.gameObject;
 		nowenemy++;
