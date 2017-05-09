@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224315837777411034}
   - component: {fileID: 114220082743858518}
+  - component: {fileID: 114801090191915694}
   m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
@@ -312,13 +313,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8abccd9f04107a4dac3d65c44a7958b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  MAXHP: 0
-  MP: 0
-  MAXMP: 0
-  speed: 0
-  attack: 0
-  defense: 0
+  HP: 100
+  MAXHP: 100
+  MP: 100
+  MAXMP: 100
+  speed: 20
+  attack: 10
+  defense: 5
 --- !u!114 &114285773572453794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,6 +416,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114801090191915694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760567700932958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51e208a947f50540be24649b904ff5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  MAXHP: 100
 --- !u!114 &114908443514235556
 MonoBehaviour:
   m_ObjectHideFlags: 1

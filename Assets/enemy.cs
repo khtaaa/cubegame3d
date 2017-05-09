@@ -7,10 +7,11 @@ public class enemy : MonoBehaviour {
 	private Rigidbody rb;
 	public Vector3 normal;
 	public GameObject floor;
-
+	status enemystatus;
 
 	// Use this for initialization
 	void Start () {
+		enemystatus=this.gameObject.GetComponent<status> ();
 		rb = this.GetComponent<Rigidbody>();
 		rb.useGravity = false;
 		localGravity = new Vector3(normal.x * -9.8f, normal.y * -9.8f, normal.z * -9.8f);
@@ -35,8 +36,11 @@ public class enemy : MonoBehaviour {
 	void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.CompareTag ("Player")) {
-			floor.GetComponent<enemy_spown> ().nowenemy--;
-			Destroy (gameObject);
+			enemystatus.HP -= 5;
+			if (enemystatus.HP <= 0) {
+				floor.GetComponent<enemy_spown> ().nowenemy--;
+				Destroy (gameObject);
+			}
 
 		}
 	}
