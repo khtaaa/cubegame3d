@@ -79,6 +79,8 @@ GameObject:
   - component: {fileID: 114424529608639256}
   - component: {fileID: 54064301553910656}
   - component: {fileID: 114254280400097062}
+  - component: {fileID: 114365036744466688}
+  - component: {fileID: 135321317323640964}
   m_Layer: 9
   m_Name: enemy
   m_TagString: enemy
@@ -155,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679969986048416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -44.93, z: 0}
+  m_LocalPosition: {x: 0, y: -44.93, z: -3.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224934954756868496}
@@ -347,6 +349,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114365036744466688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679969986048416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa55037ad08345d44b2abe5105e7bd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114424529608639256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,6 +464,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!135 &135321317323640964
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679969986048416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!135 &135543102488052644
 SphereCollider:
   m_ObjectHideFlags: 1
