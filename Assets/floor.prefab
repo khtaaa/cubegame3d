@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 44a4e061d976a894089102ab8b566b52, type: 2}
+  - {fileID: 2100000, guid: d2d1a3e8de079314ba3e9797f785699c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,4 +118,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1679969986048416, guid: c42d5b3eddb105e44bd0b9b28943a6c0, type: 2}
-  ok: 0
+  maxenemy: 10
+  nowenemy: 0

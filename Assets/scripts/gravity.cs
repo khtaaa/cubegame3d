@@ -5,13 +5,31 @@ using UnityEngine;
 public class gravity : MonoBehaviour {
 	public Vector3 localGravity;
 	private Rigidbody rb;
+	Vector3 normal;
+	public bool Color;
 
 	void Start () {
 		rb = this.GetComponent<Rigidbody>();
+		rb.useGravity = false;
+		if (Random.value<0.5f) {
+			Color = true;
+			this.transform.position = new Vector3 (0,-45,0);
+
+			normal=new Vector3(0,1,0);
+		} else {
+			Color = false;
+			this.transform.position = new Vector3 (0,45,0);
+
+			normal=new Vector3(0,-1,0);
+		}
+		localGravity = new Vector3(normal.x * -9.8f, normal.y * -9.8f, normal.z * -9.8f);
 	}
 
 	void Update ()
 	{
+		Vector3 viewVec = Vector3.Cross(transform.right, normal);
+
+		transform.rotation = Quaternion.LookRotation(viewVec, normal);
 	} 
 	
 	void FixedUpdate () {
@@ -29,7 +47,7 @@ public class gravity : MonoBehaviour {
 
         if (col.gameObject.CompareTag("Floor"))
         {
-            Vector3 normal = col.gameObject.GetComponent<NormalVector>().normal;
+            normal = col.gameObject.GetComponent<NormalVector>().normal;
             localGravity = new Vector3(normal.x * -9.8f, normal.y * -9.8f, normal.z * -9.8f);
 
             // 外積 2つのベクトルが成す平面の法線方向を求める
