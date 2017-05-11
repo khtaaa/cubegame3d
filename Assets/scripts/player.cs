@@ -22,7 +22,7 @@ public class player : MonoBehaviour {
 		transform.Rotate (0f, rote, 0f);
 
 		if (Input.GetKeyDown (KeyCode.Space) && floor==true) {
-			this.GetComponent<Rigidbody> ().velocity = normal*9.8f;//new Vector3 (this.GetComponent<Rigidbody> ().velocity.x, 10, 0);
+			this.GetComponent<Rigidbody> ().velocity = normal*9.8f*1.5f;//new Vector3 (this.GetComponent<Rigidbody> ().velocity.x, 10, 0);
 		}
 	}
 
