@@ -16,7 +16,7 @@ public class enemy_AI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Discovery == true&& player!=null) {
-			transform.rotation = player.transform.rotation;
+			//transform.rotation = player.transform.rotation;
 			dir = player.transform.position - transform.position;
 			dir = dir.normalized;
 			GetComponent<Rigidbody> ().velocity = dir * 5;

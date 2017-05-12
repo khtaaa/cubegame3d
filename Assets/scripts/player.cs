@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class player : MonoBehaviour {
+	status ST;
 	public float pos;
 	public float rote;
 	public bool floor;
 	public Vector3 normal;
-	public int speed=20;
 	// Use this for initialization
 	void Start () {
-		
+		ST = GetComponent<status> ();
 	}
 	
 	// Update is called once per frame
@@ -18,7 +18,7 @@ public class player : MonoBehaviour {
 		pos = Input.GetAxis ("Vertical");
 		rote = Input.GetAxis ("Horizontal");
 
-		transform.Translate (0f, 0f, pos*speed*0.01f);
+		transform.Translate (0f, 0f, pos*ST.speed*0.01f);
 		transform.Rotate (0f, rote, 0f);
 
 		if (Input.GetKeyDown (KeyCode.Space) && floor==true) {
@@ -36,7 +36,7 @@ public class player : MonoBehaviour {
 		}
 
 		if (col.gameObject.CompareTag ("rock")) {
-			speed = 8;
+			ST.speed = 8;
 			
 		}
 	}
@@ -54,7 +54,7 @@ public class player : MonoBehaviour {
 
 	void OnCollisionExit(Collision col) {
 		if (col.gameObject.CompareTag ("rock")) {
-			speed = 20;
+			ST.speed = 20;
 
 		}
 
