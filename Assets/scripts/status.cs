@@ -10,4 +10,8 @@ public class status : MonoBehaviour {
 	public float speed=20;//移動速度
 	public int attack=10;//攻撃力
 	public int defense=5;//防御力
+
+	public GameObject target;//ターゲット
+	public string STET;//状態
+	public string color;//色
 }

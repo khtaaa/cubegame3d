@@ -60,13 +60,7 @@ public class point : MonoBehaviour {
 	{
 		if (col.gameObject.CompareTag ("Player")) {
 			stay = true;
-			if (col.gameObject.GetComponent<gravity> ().Color == true) {
-				Pcoler="red";
-			}
-
-			if (col.gameObject.GetComponent<gravity> ().Color == false) {
-				Pcoler = "blue";
-			}
+			Pcoler = col.gameObject.GetComponent<status> ().color;
 		}
 	}
 

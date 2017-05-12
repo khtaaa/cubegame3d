@@ -4,24 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class player_HP : MonoBehaviour {
-	status playerstatus;
+	status ST;
 	public float HP=100;
 	public float MAXHP=100;
 	Slider _slider;
 	void Start () {
-		playerstatus =gameObject.transform.parent.gameObject.gameObject.transform.parent.gameObject.GetComponent<status> ();
+		ST =gameObject.transform.parent.gameObject.gameObject.transform.parent.gameObject.GetComponent<status> ();
 		_slider = this.gameObject.GetComponent<Slider> ();
-		HP =playerstatus.HP;
-		MAXHP = playerstatus.MAXHP;
+		HP =ST.HP;
+		MAXHP = ST.MAXHP;
 		_slider.maxValue = MAXHP;
 	}
 	void Update () {
-		playerstatus =gameObject.transform.parent.gameObject.gameObject.transform.parent.gameObject.GetComponent<status> ();
-		HP = playerstatus.HP;
-		MAXHP = playerstatus.MAXHP;
+		ST =gameObject.transform.parent.gameObject.gameObject.transform.parent.gameObject.GetComponent<status> ();
+		HP = ST.HP;
+		MAXHP = ST.MAXHP;
 		_slider.value = HP/MAXHP*100;
 		if (HP <= 0) {
-			Application.LoadLevel("title");
+			//Application.LoadLevel("title");
+			ST.STET="del";
 		}
 	}
 }

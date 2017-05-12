@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class gravity : MonoBehaviour {
+	status ST;
 	public Vector3 localGravity;
 	private Rigidbody rb;
 	Vector3 normal;
 	public bool Color;
 
 	void Start () {
+		ST = GetComponent<status> ();
 		rb = this.GetComponent<Rigidbody>();
 		rb.useGravity = false;
 		if (Random.value<0.5f) {
-			Color = true;
+			ST.color = "red";
 			this.transform.position = new Vector3 (0,-45,0);
 
 			normal=new Vector3(0,1,0);
 		} else {
-			Color = false;
+			ST.color="blue";
 			this.transform.position = new Vector3 (0,45,0);
 
 			normal=new Vector3(0,-1,0);
@@ -27,6 +29,20 @@ public class gravity : MonoBehaviour {
 
 	void Update ()
 	{
+
+		if (ST.STET == "del") {
+			if (ST.color == "red") {
+				this.transform.position = new Vector3 (0, -45, 0);
+				normal = new Vector3 (0, 1, 0);
+			}
+			if (ST.color == "blue") {
+				this.transform.position = new Vector3 (0, 45, 0);
+				normal=new Vector3(0,-1,0);
+			}
+			localGravity = new Vector3(normal.x * -9.8f*2, normal.y * -9.8f*2, normal.z * -9.8f*2);
+			ST.HP = ST.MAXHP;
+			ST.STET = null;
+		}
 		Vector3 viewVec = Vector3.Cross(transform.right, normal);
 
 		transform.rotation = Quaternion.LookRotation(viewVec, normal);

@@ -15,6 +15,7 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		pos = Input.GetAxis ("Vertical");
 		rote = Input.GetAxis ("Horizontal");
 
