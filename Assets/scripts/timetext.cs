@@ -13,8 +13,11 @@ public class timetext : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		time -= Time.deltaTime;
-		if (time < 0)
+		if (time < 0) {
 			time = 0;
+			Application.LoadLevel ("title");
+		}
 		GetComponent<Text> ().text = ((int)time).ToString ();
+
 	}
 }
