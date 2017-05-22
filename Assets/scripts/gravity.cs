@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class gravity : MonoBehaviour {
-	status ST;
+	status ST;//ステータス
 	public Vector3 localGravity;
 	private Rigidbody rb;
 	Vector3 normal;
@@ -71,6 +71,7 @@ public class gravity : MonoBehaviour {
             Vector3 viewVec = Vector3.Cross(transform.right, normal);
 
             transform.rotation = Quaternion.LookRotation(viewVec, normal);
+
 
             /*
             // ぶつかった先のフロアの法線のマイナス方向と、現在の正面方向の成す角度を求める
