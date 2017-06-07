@@ -538,6 +538,7 @@ MonoBehaviour:
   rote: 0
   floor: 0
   normal: {x: 0, y: 0, z: 0}
+  localGravity: {x: 0, y: 0, z: 0}
 --- !u!114 &114317267744919726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -577,6 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rock: {fileID: 1699160407153616, guid: d422a20d6aa7a6046987b55edb5fed06, type: 2}
+  nor: {x: 0, y: 0, z: 0}
   scaffold: {fileID: 1665886694484570, guid: d28830a70e71cad4695ba14cd67555f0, type: 2}
 --- !u!114 &114388133746412112
 MonoBehaviour:
@@ -678,7 +680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localGravity: {x: 0, y: 0, z: 0}
-  Color: 0
 --- !u!114 &114693501153058402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -719,6 +720,8 @@ MonoBehaviour:
   attack: 10
   defense: 5
   target: {fileID: 0}
+  STET: 
+  color: 
 --- !u!114 &114905484122161506
 MonoBehaviour:
   m_ObjectHideFlags: 1

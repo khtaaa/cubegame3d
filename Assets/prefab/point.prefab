@@ -106,3 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   red: {fileID: 2100000, guid: 44a4e061d976a894089102ab8b566b52, type: 2}
   blue: {fileID: 2100000, guid: 02c10f5bda49e5647852538e7f640f38, type: 2}
+  coler: 
+  Pcoler: 
+  time: 0
+  maxtime: 0
+  stay: 0

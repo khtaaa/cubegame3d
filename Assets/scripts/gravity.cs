@@ -7,7 +7,7 @@ public class gravity : MonoBehaviour {
 	public Vector3 localGravity;
 	private Rigidbody rb;
 	Vector3 normal;
-	public bool Color;
+	//public bool Color;
 
 	void Start () {
 		ST = GetComponent<status> ();
